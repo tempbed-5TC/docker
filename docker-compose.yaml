@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  app:
+  backend:
     build: ./backend
     restart: always
     networks:
@@ -11,10 +11,10 @@ services:
     build: ./nginx
     restart: always
     networks:
-      - app
+      - backend
 
 networks:
-  app:
+  backend:
     external:
       false
 
